@@ -56,5 +56,22 @@ public class TestController {
 		return "memberList";
 	}
 	
+	@RequestMapping(value = "/searchId")
+	public String searchId() {
+		
+		return "idSearch";
+	}
+	
+	@RequestMapping(value = "idOk")
+	public String idOk(HttpServletRequest request, Model model) {
+		
+		String searchId = request.getParameter("searchId");
+		IDao dao = sqlSession.getMapper(IDao.class);
+		MemberDto mdto = dao.searchIdOk(searchId);
+		
+		model.addAttribute("searchRs", mdto);		
+		
+		return "idOk";
+	}
 	
 }

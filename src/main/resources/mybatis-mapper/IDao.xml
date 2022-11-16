@@ -13,4 +13,8 @@
 		SELECT * FROM member
 	</select>
 	
+	<select id="searchIdOk" resultType="com.gyojincompany.test.dto.MemberDto">
+		SELECT * FROM member WHERE mid=#{param1}
+	</select>
+	
 </mapper>	
