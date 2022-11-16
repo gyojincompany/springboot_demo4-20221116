@@ -8,4 +8,9 @@
 	<insert id="memberJoin">
 		INSERT INTO member(mid, mpw, mname, memail) VALUES(#{param1}, #{param2}, #{param3}, #{param4})
 	</insert>
+	
+	<select id="memberList" resultType="com.gyojincompany.test.dto.MemberDto">
+		SELECT * FROM member
+	</select>
+	
 </mapper>	
